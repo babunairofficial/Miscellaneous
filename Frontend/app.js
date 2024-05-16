@@ -25,15 +25,46 @@
 // let p1 = new Person("adam", 25);
 // let p2 = new Person("eve", 25);
 
+// class Person{
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     talk(){
+//         console.log(`Hi, my name is ${this.name}`);
+//     }
+// }
+// let p1 = new Person("adam", 25);
+// let p2 = new Person("eve", 25);
+
 class Person{
     constructor(name, age){
+        console.log("person class constructor");
         this.name = name;
         this.age = age;
     }
-
     talk(){
-        console.log(`Hi, my name is ${this.name}`);
+        console.log(`Hi, I am ${this.name}`);
     }
 }
-let p1 = new Person("adam", 25);
-let p2 = new Person("eve", 25);
+
+class Student extends Person{
+    constructor(name, age, marks){
+        console.log("student class constructor");
+       super(name, age); //parent class constructor is being called
+        this.marks = marks;
+    }
+    
+}
+
+
+
+class Teacher extends Person{
+    constructor(name, age, subject){
+        console.log("teacher class constructor");
+        super(name, age); //parent class constructor is being called
+        this.subject = subject;
+    }
+    
+}
